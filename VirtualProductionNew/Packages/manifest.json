@@ -1,18 +1,8 @@
 {
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     "com.huggingface.api": "https://github.com/huggingface/unity-api.git",
-=======
-    "com.meta.xr.sdk.voice": "71.0.0",
->>>>>>> parent of b45f8a4 (Before adding OpenAI package)
-=======
-    "com.meta.xr.sdk.voice": "71.0.0",
->>>>>>> parent of b45f8a4 (Before adding OpenAI package)
-=======
-    "com.meta.xr.sdk.voice": "71.0.0",
->>>>>>> parent of b45f8a4 (Before adding OpenAI package)
+
     "com.unity.burst": "1.8.17",
     "com.unity.collab-proxy": "2.8.2",
     "com.unity.feature.development": "1.0.1",
