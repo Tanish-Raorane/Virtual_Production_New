@@ -1,6 +1,8 @@
 {
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     "com.huggingface.api": {
       "version": "https://github.com/huggingface/unity-api.git",
       "depth": 0,
@@ -11,12 +13,22 @@
       },
       "hash": "8d0231780ead66aba3ad5ad3373158d5de0bc533"
 =======
+=======
+>>>>>>> parent of b45f8a4 (Before adding OpenAI package)
+=======
+>>>>>>> parent of b45f8a4 (Before adding OpenAI package)
     "com.meta.xr.sdk.voice": {
       "version": "71.0.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of b45f8a4 (Before adding OpenAI package)
+=======
+>>>>>>> parent of b45f8a4 (Before adding OpenAI package)
+=======
 >>>>>>> parent of b45f8a4 (Before adding OpenAI package)
     },
     "com.unity.burst": {
