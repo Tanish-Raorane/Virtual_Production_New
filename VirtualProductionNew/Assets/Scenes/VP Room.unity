@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 755424917}
   - component: {fileID: 755424916}
   - component: {fileID: 755424915}
+  - component: {fileID: 755424919}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -235,7 +236,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 2195429746b6cbd4d8db695c1b37978f, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -260,6 +261,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &755424919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755424914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d98e5bfcdff4847ad69efa861a8e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ndiName: NDI Sender
+  _keepAlpha: 0
+  _captureMethod: 1
+  _sourceCamera: {fileID: 755424917}
+  _sourceTexture: {fileID: 0}
+  _resources: {fileID: 11400000, guid: 69304b86950074db7ba8caba75214004, type: 2}
 --- !u!1 &1212055047
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +378,7 @@ Transform:
   m_GameObject: {fileID: 1212055047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.83, y: 4.41, z: -9.369609}
+  m_LocalPosition: {x: 14.11, y: 8.06, z: -9.369609}
   m_LocalScale: {x: 1.9782, y: 1.9782, z: 1.9782}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -577,56 +596,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1725164010
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1725164012}
-  - component: {fileID: 1725164011}
-  m_Layer: 0
-  m_Name: NDI Sender
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1725164011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725164010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d98e5bfcdff4847ad69efa861a8e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ndiName: VPFeed
-  _keepAlpha: 0
-  _captureMethod: 2
-  _sourceCamera: {fileID: 0}
-  _sourceTexture: {fileID: 8400000, guid: 2195429746b6cbd4d8db695c1b37978f, type: 2}
-  _resources: {fileID: 11400000, guid: 69304b86950074db7ba8caba75214004, type: 2}
---- !u!4 &1725164012
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725164010}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.3688583, y: 4.117192, z: -4.2204895}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2040612892
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +721,5 @@ SceneRoots:
   - {fileID: 2040612894}
   - {fileID: 1692854489}
   - {fileID: 1212055051}
-  - {fileID: 1725164012}
   - {fileID: 1375533883}
   - {fileID: 755424918}
