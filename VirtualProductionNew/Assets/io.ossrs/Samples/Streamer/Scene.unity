@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab5431c7fd374a56aa6a1e3c13d907c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: https://customer-pbwol7iolrvppuny.cloudflarestream.com/4be918f2a469720e505697934ecda51akd92525c0fd1172344d68a52c500d0796/webRTC/publish
+  url: https://customer-pbwol7iolrvppuny.cloudflarestream.com/d92525c0fd1172344d68a52c500d0796/webRTC/play
   sourceCamera: {fileID: 860006895}
 --- !u!114 &1142846199
 MonoBehaviour:

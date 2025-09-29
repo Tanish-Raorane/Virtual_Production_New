@@ -84,11 +84,13 @@ public class SrsPlayer : MonoBehaviour
                     receiveImage.texture = tex; // Directly assign
                     receiveImage.enabled = true;
 
-                    // Set image size based on video
+                    //Set image size based on video
                     var width = tex.width < 1280 ? tex.width : 1280;
                     var height = tex.width > 0 ? width * tex.height / tex.width : 720;
-                    receiveImage.rectTransform.sizeDelta = new Vector2(width, height);
+                    //receiveImage.rectTransform.sizeDelta = new Vector2(width, height);
+                    receiveImage.rectTransform.sizeDelta = new Vector2(3, 3);
                     receiveImage.rectTransform.localScale = Vector3.one;
+
                 };
             }
 
