@@ -20,14 +20,16 @@ public class WebSocketsController : MonoBehaviour
     public GameObject UIPrefab;
     private GameObject UI;
 
+    public string URL = "wss://test.potentialdifference.org.uk/ws/fx/Unity";
+
     async void Start()
     {
-        webSocket = new WebSocket("wss://lexedit.net/ws/fx/Unity");
+        webSocket = new WebSocket(URL);
 
         webSocket.OnOpen += () =>
         {
             Debug.Log("WebSocket Connected");
-            StartCoroutine(SendData());
+            //StartCoroutine(SendData());
         };
 
         webSocket.OnError += (e) =>
@@ -44,10 +46,17 @@ public class WebSocketsController : MonoBehaviour
             }
         };
 
-        webSocket.OnMessage += (bytes) =>
+        webSocket.OnMessage += async (bytes) =>
         {
             string message = System.Text.Encoding.UTF8.GetString(bytes);
             Debug.Log("WebSocket Message: " + message);
+
+            if(message.Contains("\"instruction\":\"keepalive\""))
+            {
+                Debug.Log("Responding to keepalive");
+                await webSocket.SendText(message);
+            }
+
         };
 
         await webSocket.Connect();
@@ -62,6 +71,17 @@ public class WebSocketsController : MonoBehaviour
             UI.transform.LookAt(Camera.main.transform);
             UI.transform.Rotate(0, 180, 0); // Flip to face camera
         }
+    }
+
+    public async void sendImpactPoint(ImpactPayload impactPayload)
+    {
+        if (webSocket == null || webSocket.State != WebSocketState.Open)
+            return;
+
+        string json = JsonConvert.SerializeObject(impactPayload);
+        await webSocket.SendText(json);
+        Debug.Log("Sent Impact Point " + json);
+        
     }
 
     async void OnApplicationQuit()
@@ -154,7 +174,7 @@ public class WebSocketsController : MonoBehaviour
 
     private async Task SetupWebSocket()
     {
-        webSocket = new WebSocket("wss://lexedit.net/ws/fx/Unity");
+        webSocket = new WebSocket("URL");
 
         webSocket.OnOpen += () =>
         {
@@ -176,10 +196,16 @@ public class WebSocketsController : MonoBehaviour
             }
         };
 
-        webSocket.OnMessage += (bytes) =>
+        webSocket.OnMessage += async (bytes) =>
         {
             string message = System.Text.Encoding.UTF8.GetString(bytes);
             Debug.Log("WebSocket Message (Reconnect): " + message);
+
+            if (message.Contains("\"instruction\":\"keepalive\""))
+            {
+                Debug.Log("Responding to keepalive");
+                await webSocket.SendText(message);
+            }
         };
 
         await webSocket.Connect();
@@ -201,4 +227,18 @@ public class PositionPayload
 {
     public string instruction;
     public Position[] positions;
+}
+
+[System.Serializable]
+
+public class ImpactPayload
+{
+    //  Format -> {"xDimension":0,"yDimension":0,"colour":null,"xPosition":-3,"yPosition":1,"instruction":"send2dClick"}
+    public int xDimension;
+    public int yDimension;
+    public string colour;
+    public int xPosition;
+    public int yPosition;
+    public string instruction;
+    
 }
