@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,18 +21,26 @@ public class CollisionController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Ball")
+        if (collision.collider.tag == "Ball" || collision.collider.tag == "Projectile")
         {
             Vector3 impactPoint = collision.contacts[0].point;
             planeSize = plane.GetComponent<MeshRenderer>().bounds.size;
             planeWidth = planeSize.x;
-            planeHeight = planeSize.y;
+            planeHeight = planeSize.z;
+
+            Debug.Log("Plane width, Plane height " + planeSize.x + ", " + planeSize.z);
+
+            planeWidth = 10;
+            planeHeight = 10;
+
             Vector3 localPoint = plane.transform.InverseTransformPoint(impactPoint);
 
-            float normalizedX = (localPoint.x + planeWidth/2)/planeWidth;
-            float normalizedY = (localPoint.y + planeHeight/2)/planeHeight;
+            Debug.Log("Local Point " + localPoint.x + ", " + localPoint.y);
 
-            Debug.Log("Ball hit at : " + impactPoint);
+            float normalizedX = (localPoint.x + planeWidth / 2) / planeWidth;
+            float normalizedY = (localPoint.z + planeHeight / 2) / planeHeight;
+
+            Debug.Log("Normalized " + normalizedX + ", " + normalizedY);
 
             ImpactPayload impactPayload = new ImpactPayload()
             {
@@ -48,6 +56,9 @@ public class CollisionController : MonoBehaviour
 
         }
     }
+
+
+
 
     void Update()
     {
