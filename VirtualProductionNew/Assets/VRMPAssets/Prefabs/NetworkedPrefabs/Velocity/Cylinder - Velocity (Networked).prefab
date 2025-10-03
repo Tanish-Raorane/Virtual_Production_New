@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 100065350903638652}
   - component: {fileID: 7357753736594923793}
   - component: {fileID: 2830529299010632263}
+  - component: {fileID: -88626178469937097}
   m_Layer: 0
   m_Name: Cylinder - Velocity (Networked)
   m_TagString: Ball
@@ -688,6 +689,27 @@ MonoBehaviour:
   m_AllowCollisionOwnershipExchange: 1
   m_MinExchangeVelocityMagitude: 0.025
   spawnLocked: 1
+--- !u!65 &-88626178469937097
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551389557796796110}
+  m_Material: {fileID: 13400000, guid: 0197f13c228be604fac64f9b592868aa, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1159779, y: 0.16882324, z: 0.11875422}
+  m_Center: {x: 0.002755992, y: 0.08491616, z: -0.0009194091}
 --- !u!1 &6370225513400753946
 GameObject:
   m_ObjectHideFlags: 0

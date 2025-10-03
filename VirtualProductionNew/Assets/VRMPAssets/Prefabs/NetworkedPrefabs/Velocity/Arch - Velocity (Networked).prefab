@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 3937845661104150244}
   - component: {fileID: 6917885825898819317}
   - component: {fileID: 7550463437334804868}
+  - component: {fileID: -2975369264514070186}
   m_Layer: 0
   m_Name: Arch - Velocity (Networked)
   m_TagString: Ball
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
+  m_FarAttachMode: 1
 --- !u!114 &1146057417886753448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +369,28 @@ MonoBehaviour:
   m_AllowCollisionOwnershipExchange: 1
   m_MinExchangeVelocityMagitude: 0.025
   spawnLocked: 1
+--- !u!64 &-2975369264514070186
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2333967316083053366}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &2664021352981383985
 GameObject:
   m_ObjectHideFlags: 0

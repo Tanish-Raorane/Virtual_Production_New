@@ -90,6 +90,8 @@ public class SrsPlayer : MonoBehaviour
                     //receiveImage.rectTransform.sizeDelta = new Vector2(width, height);
                     receiveImage.rectTransform.sizeDelta = new Vector2(3, 3);
                     receiveImage.rectTransform.localScale = Vector3.one;
+                    //receiveImage.texture.filterMode = FilterMode.Bilinear;
+                    //receiveImage.texture.wrapMode = TextureWrapMode.Clamp;
 
                 };
             }
